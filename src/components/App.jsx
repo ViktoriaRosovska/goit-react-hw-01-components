@@ -1,18 +1,16 @@
 import PropTypes from 'prop-types';
-import { Profile } from ".";
+import { Profile } from "./Profile/Profile";
+import {Statistics} from './Statistics/Statistics'
 import user from 'data/user.json';
+import css from './App.module.css';
+import data from 'data/data.json';
+import { FriendList } from './FriendList/FriendList';
+import friends from 'data/friends.json';
+
+
 export const App = () => {
   return (
-    <div
-      // style={{
-      //   height: '100vh',
-      //   display: 'flex',
-      //   justifyContent: 'center',
-      //   alignItems: 'center',
-      //   fontSize: 40,
-      //   color: '#010101'
-      // }}
-    >
+    <div className={css.AppWrapper}>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -20,6 +18,13 @@ export const App = () => {
         stats={user.stats}
         avatar={user.avatar}
       />
+      <Statistics 
+        title="Upload stats"
+        stats={data} />
+      
+      
+      <FriendList friends={friends} />
+      
     </div>
   );
 };
@@ -35,3 +40,13 @@ Profile.propTypes = {
     likes: PropTypes.number
   })
 }
+
+Statistics.propTypes = {
+  title: PropTypes.string
+}
+
+
+       
+   
+    
+  
