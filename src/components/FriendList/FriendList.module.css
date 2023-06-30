@@ -24,7 +24,6 @@
 
 .item:hover .avatar {
       animation: rotateAvatar 3s linear;
-     
 }
 .item:hover,
 .item.focus {
@@ -56,17 +55,21 @@
     {
         transform: translateX(0);
     }
-25%{
-    transform: translateX(-15px);
-}
+    25%
+    {
+        transform: translateX(-15px);
+    }
        
-    50%{
+    50%
+    {
         transform: translateX(0px);
     }
-    75% {
+    75% 
+    {
         transform: translateX(15px);
     }
-    100%{
+    100%
+    {
         transform: translateX(0);
     }
 }

@@ -1,0 +1,43 @@
+.transactionHistory {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(134, 133, 133);
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 2px 6px 30px 0px rgba(0, 0, 0, 0.10);
+    margin-bottom: 50px;
+}
+.tableTread {
+    height: 50px;
+    background-color: rgb(58, 210, 233);
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+.tableTread:hover,
+.tableTread:focus {
+    pointer-events: none;
+}
+.transactionHistory th,
+.transactionHistory td {
+  text-align: center;
+ 
+}
+.transactionHistory tr {
+     border: 0.5px solid rgb(207, 207, 207);
+     height: 50px;
+}
+.transactionHistory tbody tr:hover,
+.transactionHistory tbody tr:focus {
+    background-color: rgb(199, 243, 155);
+    color:salmon;
+}
+.odd {
+    background-color: rgb(227, 236, 239);
+}
+.even {
+    background-color: inherit;
+}
