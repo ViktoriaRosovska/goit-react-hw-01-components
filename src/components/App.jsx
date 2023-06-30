@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import css from './App.module.css';
 
-import { Profile } from "./Profile/Profile";
-import {Statistics} from './Statistics/Statistics'
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
@@ -11,11 +11,9 @@ import data from 'data/data.json';
 import friends from 'data/friends.json';
 import transactions from 'data/transactions.json';
 
-
 export const App = () => {
   return (
     <div className={css.AppWrapper}>
-      
       <Profile
         username={user.username}
         tag={user.tag}
@@ -24,13 +22,11 @@ export const App = () => {
         avatar={user.avatar}
       />
 
-      <Statistics 
-        title="Upload stats"
-        stats={data} />
-    
+      <Statistics title="Upload stats" stats={data} />
+
       <FriendList friends={friends} />
-      
-      <TransactionHistory items={transactions} /> 
+
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
@@ -43,9 +39,9 @@ Profile.propTypes = {
   stats: PropTypes.exact({
     followers: PropTypes.number,
     views: PropTypes.number,
-    likes: PropTypes.number
-  })
-}
+    likes: PropTypes.number,
+  }),
+};
 
 Statistics.propTypes = {
   title: PropTypes.string,
@@ -53,9 +49,10 @@ Statistics.propTypes = {
     PropTypes.exact({
       id: PropTypes.string,
       label: PropTypes.string,
-      percentage: PropTypes.number
-    }))
-}
+      percentage: PropTypes.number,
+    })
+  ),
+};
 
 TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
@@ -63,10 +60,7 @@ TransactionHistory.propTypes = {
       id: PropTypes.string,
       type: PropTypes.string,
       amount: PropTypes.string,
-      currency: PropTypes.string
-  }))
-} 
-       
-   
-    
-  
+      currency: PropTypes.string,
+    })
+  ),
+};
