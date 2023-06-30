@@ -20,7 +20,6 @@
     object-fit: contain;
     min-width: 30px;
     min-height: auto;
-    animation: rotateAvatarMinus 3s linear;
 }
 
 .item:hover .avatar {
@@ -30,19 +29,21 @@
 .item:hover,
 .item.focus {
     background-color: rgb(228, 228, 161);
-    animation: rotateAvatar 5s linear;
+    animation: rotateAvatar 2s linear;
     animation-fill-mode: both;
-    transition: all ;
 }
 .status {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: red;
+    background-color: gray;
 }
 
 .online {
     background-color: green;
+}
+.ofline {
+    background-color: red;
 }
 .name {
     font-size: 30px;
@@ -51,27 +52,23 @@
 
 @keyframes rotateAvatar {
 
-   
    0%
     {
-        transform: rotate(0deg);
+        transform: translateX(0);
     }
-
+25%{
+    transform: translateX(-15px);
+}
        
-    100% {
-        transform: rotate(360deg);
+    50%{
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(15px);
+    }
+    100%{
+        transform: translateX(0);
     }
 }
-@keyframes rotateAvatarMinus {
 
-
-    0% {
-        transform: rotate(-360deg);
-    }
-
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
 
