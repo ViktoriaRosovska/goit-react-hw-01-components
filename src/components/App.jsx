@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import css from './App.module.css';
 
 import { Profile } from './Profile/Profile';
@@ -29,38 +28,4 @@ export const App = () => {
       <TransactionHistory items={transactions} />
     </div>
   );
-};
-
-Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string,
-  stats: PropTypes.exact({
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
-  }),
-};
-
-Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
-    })
-  ),
-};
-
-TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string,
-      type: PropTypes.string,
-      amount: PropTypes.string,
-      currency: PropTypes.string,
-    })
-  ),
 };

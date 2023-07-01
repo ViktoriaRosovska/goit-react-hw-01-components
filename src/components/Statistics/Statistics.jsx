@@ -1,15 +1,24 @@
+import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 import { StatList } from './StatList';
 
 export const Statistics = ({ title, stats }) => {
-    return (
-        <section className={css.section}>
-            {title ? (<h2 className={css.title}>{title}</h2>) : 
-                (<span className={css.title}></span>)}
-            
-            <StatList stats={stats}/>
-        </section>
-    )
-}
+  return (
+    <section className={css.section}>
+      {title && <h2 className={css.title}>{title}</h2>}
 
+      <StatList stats={stats} />
+    </section>
+  );
+};
 
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ),
+};
